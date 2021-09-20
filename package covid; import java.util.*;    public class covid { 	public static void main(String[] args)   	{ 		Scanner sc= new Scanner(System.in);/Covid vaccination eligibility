@@ -1,0 +1,19 @@
+package covid;
+import java.util.*;  
+
+public class covid {
+	public static void main(String[] args)  
+	{
+		Scanner sc= new Scanner(System.in);    //System.in is a standard input stream  
+		System.out.print("Enter age to find whether eligilbe or not for vaccination - ");  
+		int a= sc.nextInt();
+		if(a>=18)
+		{
+			System.out.println("The candidate is eligible");
+		}
+		else
+		{
+				System.out.println("The candidate is ineligible for the vaccination");
+		}
+	}
+}
