@@ -5,11 +5,19 @@ public class covid {
 	public static void main(String[] args)  
 	{
 		Scanner sc= new Scanner(System.in);    //System.in is a standard input stream  
-		System.out.print("Enter age to find whether eligilbe or not for vaccination - ");  
+		System.out.println("Enter age to find whether eligilbe or not for vaccination - ");  
 		int a= sc.nextInt();
+		System.out.println("Enter aadhar card number:- ");
+		int b= sc.nextInt();
 		if(a>=18)
 		{
-			System.out.println("The candidate is eligible");
+			if(b != 0)
+			{
+				System.out.println("The candidate is eligible");
+				
+			}
+			
+			
 		}
 		else
 		{
@@ -17,3 +25,4 @@ public class covid {
 		}
 	}
 }
+
