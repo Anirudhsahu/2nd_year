@@ -1,4 +1,4 @@
-package covid;
+package fact;
 import java.util.*;  
 
 public class fact {
