@@ -1,0 +1,14 @@
+package week_5;
+
+public class Student {
+	Student()
+	{
+		
+	System.out.println("Hello! Good Morning");
+	}
+public static void main(String[] args)
+{
+	Student s1 = new Student();
+}
+
+}
