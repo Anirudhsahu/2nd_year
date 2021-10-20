@@ -1,0 +1,89 @@
+(base) gcet@ubuntu:~$ sudo mysql root -u -p
+[sudo] password for gcet: 
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+(base) gcet@ubuntu:~$ sudo mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.26-0ubuntu0.20.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show databases' at line 2
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| college            |
+| department         |
+| gcet               |
+| information_schema |
+| library            |
+| mysql              |
+| performance_schema |
+| student            |
+| student1           |
+| student20r11a      |
+| sys                |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> use student20r11a;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> desc student20r11a;
+ERROR 1146 (42S02): Table 'student20r11a.student20r11a' doesn't exist
+mysql> select * from sailors;
++-----+---------+--------+------+
+| sid | sname   | rating | age  |
++-----+---------+--------+------+
+|  22 | dustin  |      7 |   45 |
+|  29 | brutus  |      1 |   33 |
+|  31 | lubber  |      8 |   56 |
+|  32 | andy    |      8 |   26 |
+|  58 | rusty   |     10 |   35 |
+|  64 | horatio |      7 |   35 |
+|  71 | zorba   |     10 |   16 |
+|  74 | horatio |      9 |   35 |
+|  85 | art     |      3 |   26 |
+|  95 | bob     |      3 |   64 |
++-----+---------+--------+------+
+10 rows in set (0.00 sec)
+
+mysql> select * from boats;
++-----+-----------+-------+
+| bid | bname     | color |
++-----+-----------+-------+
+| 101 | interlake | blue  |
+| 102 | interlake | red   |
+| 103 | clipper   | green |
+| 104 | marine    | red   |
++-----+-----------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into reserves values(22,101,'1998-10-10'),(22,102,'1998-10-10'),(22,103,'1998-8-10'),(22,104,'1998-7-10'),(31,102,'1998-10-11'),(31,103,'1998-6-11'),(31,104,'1998-12-11'),(64,101,'1998-5-9'),(64,102,'1998-8-9'),(74,103,'1998-8-9');
+Query OK, 10 rows affected (0.09 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> desc reserves;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| sid   | int  | YES  | MUL | NULL    |       |
+| bid   | int  | YES  | MUL | NULL    |       |
+| day   | date | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> 
+
